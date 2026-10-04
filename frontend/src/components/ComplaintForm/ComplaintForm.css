@@ -1,0 +1,61 @@
+/* ================================
+   COMPLAINT FORM
+================================ */
+
+.complaint-form {
+  max-width: 500px;
+  padding: 25px;
+
+  background-color: white;
+
+  border-radius: 10px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.complaint-form h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.complaint-form input,
+.complaint-form textarea {
+  width: 100%;
+
+  padding: 12px;
+  margin-bottom: 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.complaint-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.complaint-form input:focus,
+.complaint-form textarea:focus {
+  border-color: #2563eb;
+}
+
+.complaint-form button {
+  padding: 10px 20px;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 480px) {
+  .complaint-form {
+    padding: 20px;
+  }
+
+  .complaint-form button {
+    width: 100%;
+  }
+}

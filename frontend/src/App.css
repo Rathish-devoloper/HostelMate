@@ -1,0 +1,1185 @@
+/* =========================================
+   HOSTELMATE
+   MODERN DASHBOARD UI
+========================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #172033;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================
+   DASHBOARD PAGE
+========================================= */
+
+.dashboard-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(79, 70, 229, 0.07),
+      transparent 28%
+    ),
+    #f5f7fb;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.app-layout {
+  display: flex;
+  min-height: calc(100vh - 68px);
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+
+  padding: 30px 38px 60px;
+}
+
+/* =========================================
+   SUCCESS / ERROR MESSAGE
+========================================= */
+
+.app-message {
+  position: fixed;
+
+  top: 82px;
+  right: 28px;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 250px;
+
+  padding: 13px 17px;
+
+  border-radius: 12px;
+
+  background: white;
+
+  box-shadow:
+    0 15px 35px rgba(15, 23, 42, 0.15);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.app-message span {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  font-weight: 800;
+}
+
+.app-message.success {
+  border-left: 4px solid #16a34a;
+}
+
+.app-message.success span {
+  background: #16a34a;
+}
+
+.app-message.error {
+  border-left: 4px solid #ef4444;
+}
+
+.app-message.error span {
+  background: #ef4444;
+}
+
+/* =========================================
+   HERO HEADER
+========================================= */
+
+.app-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  overflow: hidden;
+
+  min-height: 190px;
+
+  margin-bottom: 24px;
+  padding: 30px 34px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111827 0%,
+      #1e3a8a 52%,
+      #4f46e5 100%
+    );
+
+  color: white;
+
+  box-shadow:
+    0 20px 45px rgba(30, 64, 175, 0.18);
+}
+
+.app-header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -90px;
+  top: -170px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.app-header::after {
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+  height: 160px;
+
+  right: 190px;
+  bottom: -120px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.header-left,
+.header-user {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 11px;
+
+  margin-bottom: 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.app-header h1 {
+  margin: 0;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.7px;
+}
+
+.app-header p {
+  margin: 9px 0 0;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 14px;
+}
+
+/* =========================================
+   HEADER USER
+========================================= */
+
+.header-user {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 175px;
+
+  padding: 12px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #1e3a8a;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.header-user strong {
+  display: block;
+
+  color: white;
+
+  font-size: 14px;
+}
+
+.header-user span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 12px;
+}
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.dashboard-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+.summary-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  min-height: 125px;
+
+  overflow: hidden;
+
+  padding: 20px;
+
+  border: 1px solid #e6eaf0;
+
+  border-radius: 18px;
+
+  background: white;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 16px 35px rgba(15, 23, 42, 0.09);
+}
+
+.summary-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  right: -48px;
+  bottom: -50px;
+
+  border-radius: 50%;
+
+  opacity: 0.7;
+}
+
+.students-summary::after {
+  background: #dbeafe;
+}
+
+.rooms-summary::after {
+  background: #dcfce7;
+}
+
+.complaints-summary::after {
+  background: #fef3c7;
+}
+
+.payments-summary::after {
+  background: #ede9fe;
+}
+
+.summary-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 23px;
+}
+
+.students-summary .summary-icon {
+  background: #eff6ff;
+}
+
+.rooms-summary .summary-icon {
+  background: #f0fdf4;
+}
+
+.complaints-summary .summary-icon {
+  background: #fffbeb;
+}
+
+.payments-summary .summary-icon {
+  background: #f5f3ff;
+}
+
+.summary-card div:last-child {
+  position: relative;
+
+  z-index: 2;
+}
+
+.summary-card span {
+  display: block;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+.summary-card strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #111827;
+
+  font-size: 29px;
+
+  line-height: 1.1;
+}
+
+.summary-card small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+/* =========================================
+   QUICK PANEL
+========================================= */
+
+.quick-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 38px;
+  padding: 24px 26px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  background: white;
+
+  box-shadow:
+    0 7px 22px rgba(15, 23, 42, 0.04);
+}
+
+.panel-label {
+  color: #6366f1;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.quick-panel h2 {
+  margin: 5px 0 5px;
+
+  color: #172033;
+
+  font-size: 20px;
+}
+
+.quick-panel p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.quick-stats {
+  display: flex;
+
+  gap: 10px;
+}
+
+.quick-stats div {
+  min-width: 95px;
+
+  padding: 13px 16px;
+
+  text-align: center;
+
+  border-radius: 12px;
+
+  background: #f8fafc;
+
+  border: 1px solid #edf0f5;
+}
+
+.quick-stats strong {
+  display: block;
+
+  color: #1e3a8a;
+
+  font-size: 22px;
+}
+
+.quick-stats span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.app-section {
+  margin-bottom: 42px;
+
+  scroll-margin-top: 90px;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 17px;
+}
+
+.section-heading span {
+  color: #6366f1;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.section-heading h2 {
+  margin: 4px 0 4px;
+
+  color: #172033;
+
+  font-size: 22px;
+
+  letter-spacing: -0.3px;
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+.section-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 12px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+/* =========================================
+   SECTION CONTENT
+========================================= */
+
+.section-content {
+  padding: 22px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 20px;
+
+  background: #f8fafc;
+}
+
+/* =========================================
+   STUDENT INFO CARD
+========================================= */
+
+.student-info-card {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 40px;
+
+  padding: 20px 22px;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 16px;
+
+  background: #eff6ff;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: white;
+
+  font-size: 21px;
+}
+
+.student-info-card h3 {
+  margin: 0 0 4px;
+
+  color: #1e3a8a;
+
+  font-size: 15px;
+}
+
+.student-info-card p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   FORM OVERRIDE
+========================================= */
+
+.section-content
+.student-form,
+.section-content
+.room-form,
+.section-content
+.complaint-form,
+.section-content
+.notice-form,
+.section-content
+.food-menu-form,
+.section-content
+.payment-form {
+  max-width: 100%;
+
+  margin-bottom: 20px;
+
+  padding: 22px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 15px;
+
+  background: white;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.04);
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.student-form input,
+.room-form input,
+.complaint-form input,
+.complaint-form textarea,
+.notice-form input,
+.notice-form textarea,
+.food-menu-form input,
+.payment-form input,
+.payment-form select {
+  box-sizing: border-box;
+
+  width: 100%;
+
+  padding: 12px 14px;
+
+  margin-bottom: 11px;
+
+  border: 1px solid #d9e0e8;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #f8fafc;
+
+  color: #172033;
+
+  font-family: inherit;
+
+  font-size: 14px;
+}
+
+.student-form input:focus,
+.room-form input:focus,
+.complaint-form input:focus,
+.complaint-form textarea:focus,
+.notice-form input:focus,
+.notice-form textarea:focus,
+.food-menu-form input:focus,
+.payment-form input:focus,
+.payment-form select:focus {
+  border-color: #6366f1;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.complaint-form textarea,
+.notice-form textarea {
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+/* =========================================
+   FORM HEADINGS
+========================================= */
+
+.student-form h3,
+.room-form h3,
+.complaint-form h3,
+.notice-form h3,
+.food-menu-form h3,
+.payment-form h3 {
+  margin: 0 0 16px;
+
+  color: #172033;
+
+  font-size: 16px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.student-form button,
+.room-form button,
+.complaint-form button,
+.notice-form button,
+.food-menu-form button,
+.payment-form button {
+  padding: 10px 17px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px rgba(37, 99, 235, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.student-form button:hover,
+.room-form button:hover,
+.complaint-form button:hover,
+.notice-form button:hover,
+.food-menu-form button:hover,
+.payment-form button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(37, 99, 235, 0.28);
+}
+
+.student-form-buttons {
+  display: flex;
+
+  gap: 9px;
+}
+
+.student-form .cancel-button {
+  background: #64748b;
+
+  box-shadow: none;
+}
+
+/* =========================================
+   LISTS
+========================================= */
+
+.student-list,
+.room-list,
+.complaint-list,
+.notice-list,
+.food-menu-list,
+.payment-list {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+/* =========================================
+   CONTENT CARDS
+========================================= */
+
+.student-card,
+.room-card,
+.complaint-card,
+.notice-card,
+.food-menu-card,
+.payment-card {
+  padding: 19px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  background: white;
+
+  box-shadow:
+    0 5px 16px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.student-card:hover,
+.room-card:hover,
+.complaint-card:hover,
+.notice-card:hover,
+.food-menu-card:hover,
+.payment-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+.student-card h3,
+.room-card h3,
+.complaint-card h3,
+.notice-card h3,
+.food-menu-card h3,
+.payment-card h3 {
+  margin: 0 0 10px;
+
+  color: #172033;
+
+  font-size: 16px;
+}
+
+.student-card p,
+.room-card p,
+.complaint-card p,
+.notice-card p,
+.food-menu-card p,
+.payment-card p {
+  margin: 6px 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   CARD BUTTONS
+========================================= */
+
+.student-card-buttons {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 14px;
+}
+
+.edit-button,
+.delete-button,
+.delete-notice-button,
+.delete-food-menu-button,
+.resolve-button {
+  padding: 8px 12px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.edit-button {
+  background: #2563eb;
+
+  color: white;
+}
+
+.delete-button,
+.delete-notice-button,
+.delete-food-menu-button {
+  background: #ef4444;
+
+  color: white;
+}
+
+.resolve-button {
+  background: #16a34a;
+
+  color: white;
+}
+
+/* =========================================
+   EMPTY STATES
+========================================= */
+
+.no-students,
+.no-rooms,
+.no-complaints,
+.no-notices,
+.no-food-menus,
+.no-payments {
+  grid-column: 1 / -1;
+
+  padding: 28px;
+
+  text-align: center;
+
+  border: 1px dashed #cbd5e1;
+
+  border-radius: 14px;
+
+  background: white;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.app-footer {
+  padding: 32px 0 10px;
+
+  text-align: center;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-logo {
+  color: #1e3a8a;
+
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+.app-footer p {
+  margin: 5px 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.app-footer span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .dashboard-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .student-list,
+  .room-list,
+  .complaint-list,
+  .notice-list,
+  .food-menu-list,
+  .payment-list {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding: 26px 28px 50px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 20px 15px 40px;
+  }
+
+  .app-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 24px;
+  }
+
+  .app-header h1 {
+    font-size: 24px;
+  }
+
+  .header-user {
+    width: 100%;
+  }
+
+  .dashboard-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-panel {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .quick-stats {
+    width: 100%;
+  }
+
+  .quick-stats div {
+    flex: 1;
+  }
+
+  .section-content {
+    padding: 14px;
+  }
+
+  .student-list,
+  .room-list,
+  .complaint-list,
+  .notice-list,
+  .food-menu-list,
+  .payment-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 15px 10px 30px;
+  }
+
+  .app-header {
+    padding: 20px;
+
+    border-radius: 18px;
+  }
+
+  .app-header h1 {
+    font-size: 21px;
+  }
+
+  .summary-card {
+    min-height: 105px;
+  }
+
+  .quick-stats {
+    flex-direction: column;
+  }
+
+  .section-heading h2 {
+    font-size: 19px;
+  }
+
+  .section-number {
+    width: 34px;
+    height: 34px;
+  }
+
+  .app-message {
+    left: 15px;
+    right: 15px;
+
+    top: 75px;
+
+    min-width: auto;
+  }
+}
