@@ -12,6 +12,7 @@ const complaintRoutes = require("./routes/complaintRoutes");
 const noticeRoutes = require("./routes/noticeRoutes");
 const foodMenuRoutes = require("./routes/foodMenuRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
+const chatRoutes = require("./routes/chatRoutes");
 
 const protect = require("./middleware/authMiddleware");
 const adminOnly = require("./middleware/adminMiddleware");
@@ -160,6 +161,8 @@ app.use("/complaints", complaintRoutes);
 app.use("/notices", noticeRoutes);
 app.use("/food-menu", foodMenuRoutes);
 app.use("/payments", paymentRoutes);
+app.use("/api/chat", chatRoutes);
+app.use("/chat", chatRoutes);
 
 // =========================
 // SERVER

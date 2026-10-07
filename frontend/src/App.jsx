@@ -31,6 +31,7 @@ import FoodMenu from "./components/FoodMenu/FoodMenu";
 
 import PaymentForm from "./components/PaymentForm/PaymentForm";
 import PaymentList from "./components/PaymentList/PaymentList";
+import Chatbot from "./components/Chatbot/Chatbot";
 
 import "./App.css";
 
@@ -1498,6 +1499,8 @@ function App() {
           </main>
 
         </div>
+
+        <Chatbot />
 
       </div>
     );
