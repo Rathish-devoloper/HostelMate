@@ -17,7 +17,7 @@ function Login() {
     }
 
     axios
-      .post("http://localhost:5000/auth/login", {
+      .post("https://hostelmate-pvmf.onrender.com/auth/login", {
         email,
         password,
       })
