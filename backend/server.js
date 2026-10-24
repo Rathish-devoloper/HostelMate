@@ -97,8 +97,7 @@ app.put("/students/:id", protect, adminOnly, async (req, res) => {
   }
 });
 
-// DELETE student
-// Admin only
+
 app.delete(
   "/students/:id",
   protect,
@@ -168,7 +167,7 @@ app.use("/chat", chatRoutes);
 // SERVER
 // =========================
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

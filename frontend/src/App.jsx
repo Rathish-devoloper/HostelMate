@@ -32,10 +32,11 @@ import FoodMenu from "./components/FoodMenu/FoodMenu";
 import PaymentForm from "./components/PaymentForm/PaymentForm";
 import PaymentList from "./components/PaymentList/PaymentList";
 import Chatbot from "./components/Chatbot/Chatbot";
+import { API_BASE_URL } from "./services/api";
 
 import "./App.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = API_BASE_URL;
 
 function App() {
   const getUser = () => {

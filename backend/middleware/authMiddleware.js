@@ -1,9 +1,5 @@
 const jwt = require("jsonwebtoken");
 
-// ========================================
-// AUTHENTICATION MIDDLEWARE
-// ========================================
-
 const protect = (req, res, next) => {
   try {
     // Get authorization header

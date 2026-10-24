@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../services/api";
 
 import "./Login.css";
 
@@ -17,7 +18,7 @@ function Login() {
     }
 
     axios
-      .post("http://localhost:5000/auth/login", {
+      .post(`${API_BASE_URL}/auth/login`, {
         email,
         password,
       })
